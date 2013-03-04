@@ -10,17 +10,17 @@ using namespace cards;
 
 
 deck::deck()
-{
+{//creates a deck with 52 cards
     cards.reserve(DECK_SIZE);
     for(int i=0; i<DECK_SIZE; i++)
-    {
+      {//creates cards with different ranks and suits
         cards.push_back(card((cards::t_suit)(i/13), cards::ranks[(i%13)]));
     }
-    shuffle();
+    shuffle(); //calls shuffle
 }
 
 deck::deck(int deckCount)
-{
+{ //creates deckCount + 1 number of decks
     //Only allowing whole decks to get added;
     int h = deckCount + 1;
     cards.reserve(deckCount*DECK_SIZE);
@@ -31,11 +31,11 @@ deck::deck(int deckCount)
             cards.push_back(card((cards::t_suit)(i/13), cards::ranks[(i%13)]));
         }
     }
-    shuffle();
+    shuffle(); //calls shuffle
 }
 
-void deck::shuffle()
-{
+void deck::shuffle() //using the random shuffle function existing in algorithm
+{  //since it's already created and shuffling is just use of rand() and swapping items
     srand(time(NULL));
     std::random_shuffle(cards.begin(), cards.end());
 }
@@ -44,13 +44,13 @@ void deck::shuffle()
 card deck::deal()
 {
     card card1 = (card)cards.back();
-    cards.erase(cards.end()-1);
-    return card1;
+    cards.erase(cards.end()-1);//removes the card from the deck
+    return card1; //returns the card
 }
 
 //Return number of cards left
 int deck::size()
-{
+{ //returns the deck size()
     return cards.size();
 }
 

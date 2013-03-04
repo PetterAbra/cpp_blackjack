@@ -10,7 +10,7 @@ using namespace casino;
 std::vector<gambler> gamblers;
 
 game::game(gameType s, int players)
-{
+{ //creates the gamblers with House as dealer
     t = s;
     gambler d("House", "");
     gamblers.push_back(d);
@@ -22,11 +22,7 @@ game::game(gameType s, int players)
 }
 
 gameType game::getType()
-{
+{ //returns the gametype
     return t;
 }
 
-void game::start()
-{
-
-}

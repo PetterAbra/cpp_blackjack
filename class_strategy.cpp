@@ -7,11 +7,11 @@ using namespace casino;
 gameType strategy::getGameType()
 {
     return t;
-
 }
 
 action* takeAction(gameState* g)
 {
+  //no use of the gamestate since this is called from gambler
     action* p;
     return p;
 }
