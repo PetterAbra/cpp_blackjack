@@ -10,6 +10,7 @@ namespace casino{
   
   class strategy{
     gameType t;
+
     
   public:
     gameType getGameType();

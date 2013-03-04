@@ -1,0 +1,17 @@
+#include "class_blackjackStrategy.h"
+#include "class_strategy.h"
+#include "class_blackjackAction.h"
+
+using namespace casino;
+
+blackjackStrategy::blackjackStrategy(controlType s):strategy()
+{
+    //if(s == TERMINAL)
+}
+
+action* blackjackStrategy::takeAction(gameState *g)
+{
+  g->print();
+    blackjackAction action(TERMINAL);
+    return &action;
+}

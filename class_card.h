@@ -8,7 +8,7 @@
 namespace cards{
 
   //Shorthand enum for suits
-  typedef enum{SPADES,HEARTS,CLUBS,DIAMONDS} t_suit; 
+  typedef enum{CLUBS,HEARTS,SPADES,DIAMONDS} t_suit;
 
   //Rank is OK as char
   typedef char t_rank;

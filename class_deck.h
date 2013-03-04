@@ -12,7 +12,7 @@ namespace cards{
     deck();
     deck(int deckCount);
     void shuffle();
-    
+
     //Return one card - remove the card from the deck.
     card deal();
     
