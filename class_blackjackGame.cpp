@@ -63,14 +63,10 @@ void blackjackGame::playRound()
 		}
 	      g.giveMoney(money); //giving the gambler that amount of money
 	      gamblers[i] = g; //setting the gambler back in the vector
-	      std::cin.clear(); //in case cin hase more info
-	      while( std::cin.get() != '\n' ); //just to make sure cin works next time
             }
             else //if they wrote something else than a number it will say so
 	      {
 		std::cout << "\nI am sorry, but that didn't make sense\n";
-		std::cin.clear(); //clearing up the cin, to resolve bugs with loops
-		while(std::cin.get() != '\n'); //loops until cin is okay to use
 	      }
         }
         if(blackjackGame::checkBlackjack(i))
@@ -151,8 +147,8 @@ void blackjackGame::start()  //function to start the game
         deal(dealt.size()); //calling the deal function
         playRound();//starts playRound()
         std::cout << "\nWant to play another round of blackjack? Y for yes, N for no\n";
-        std::cin.clear(); //clears the cin
-        while( std::cin.get() != '\n' );
+	std::cin.clear();
+        while( std::cin.get() != '\n' ) std::cin.clear();
         std::cin >> round; //checks if it shall continue looping the game
     }
 }
